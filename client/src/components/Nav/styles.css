@@ -1,30 +1,26 @@
-form {
-    width: 90%;
+.navbar-container {
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
+    margin-bottom: 50px;
+}
+
+.navbar {
+    max-width: 960px;
     margin: auto;
-    margin-bottom: 2em;
 }
 
-@media (min-width: 600px) {
-    form {
-        width: 40%;
-        max-width: 500px;
-    }
-}
-
-form .form-group {
+.logo {
+    font-weight: normal;
     margin: 0;
-    width: 100%;
 }
 
-form .form-group input {
-    border-radius: 24px 0 0 24px;
-    width: 100%;
+.navbar-toggler {
+    border: none;
 }
 
-form .btn {
-    border-radius: 0 24px 24px 0;
-}
-
-form .btn i {
-    margin: 0 1em;
+.navbar-toggler:focus {
+    outline: none;
+    opacity: .5;
 }

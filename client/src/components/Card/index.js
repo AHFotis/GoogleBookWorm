@@ -1,9 +1,10 @@
 import React from "react";
+import "./styles.css"
 
 
 function Card({ children }) {
   return (
-    <div>{ children }</div>
+    <div className="mainCard">{ children }</div>
   );
 }
 

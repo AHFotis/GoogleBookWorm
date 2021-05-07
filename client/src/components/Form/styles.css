@@ -4,15 +4,10 @@ form {
     margin-bottom: 2em;
 }
 
-@media (min-width: 600px) {
-    form {
-        width: 40%;
-        max-width: 500px;
-    }
-}
+
 
 form .form-group {
-    margin: 0;
+   margin: 0;
     width: 100%;
 }
 
@@ -27,4 +22,11 @@ form .btn {
 
 form .btn i {
     margin: 0 1em;
+}
+
+@media (min-width: 600px) {
+    form {
+        width: 40%;
+        max-width: 500px;
+    }
 }

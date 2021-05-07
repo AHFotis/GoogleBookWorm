@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import "../app.css"
 
 function Books() {
   // Setting our component's initial state
@@ -59,20 +60,26 @@ function Books() {
   };
 
     return (
-      <Container fluid>
-      <Row>
+      <div className="mainBody">
+      
+      
         <div className="hero">
           <Jumbotron>
-            <h1>React Google Books Search</h1>
-            <h5>Search For and Save Books of Interest</h5>
+            <div className="jumboText">
+            <h1>Google Book Worm</h1>
+            <h5>Feed your inner book worm! Search for and save books of interest.</h5>
+            </div>
           </Jumbotron>
         </div>
+
+        <Container fluid>
+       <Row>
         <Col size="md-12">
           <form className="d-flex">
             <Input
               onChange={handleInputChange}
               name="title"
-              placeholder='ex. "Harry Potter"'
+              placeholder='ex. "Catcher In The Rye"'
             />
             <FormBtn
               // onClick={handleSearchSubmit}
@@ -116,7 +123,7 @@ function Books() {
         </Col>
       </Row>
     </Container>
-  
+    </div>
     );
   }
 

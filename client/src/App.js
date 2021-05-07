@@ -5,6 +5,7 @@ import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 
+
 function App() {
   return (
     <Router>
@@ -14,7 +15,7 @@ function App() {
           <Route exact path={["/", "/books"]}>
             <Books />
           </Route>
-          <Route exact path="/books/:id">
+          <Route exact path="/saved">
             <Detail />
           </Route>
           <Route>

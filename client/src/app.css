@@ -1,0 +1,11 @@
+.mainBody {
+   
+    min-height: 100vh;
+}
+
+.jumboText {
+    background-color:rgba(250, 235, 215, 0.592);
+    width: 75%;
+    margin: 0 auto;
+    padding: 50px;
+}
