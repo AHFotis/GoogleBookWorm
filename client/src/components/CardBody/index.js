@@ -3,7 +3,6 @@ import "./styles.css";
 
 
 function CardBody(props) {
-  // console.log(props);
   return (
     <div key={props.id}>
 
@@ -13,7 +12,7 @@ function CardBody(props) {
           { props.authors ? (<h5 className="authors">{props.authors}</h5>) : ""}
       </div>
       <div className="image-description">
-          { props.image ? (<div className="image"><img className="card-img" src={props.image} alt="book thumbnail" /></div>) : "" }
+          { props.image ? (<img className="card-img" src={props.image} alt="book thumbnail" />) : "" }
 
           { props.description ? (<p className="description">{props.description}</p>) : ""}
       </div>

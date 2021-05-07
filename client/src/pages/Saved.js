@@ -11,17 +11,28 @@ import { List, ListItem } from "../components/List";
 import "../app.css"
 
 function Saved(props) {
-  const [books, setBook] = useState({})
+  const [books, setBooks] = useState([])
 
- 
-  // useEffect(() => {
-  //   API.getBook()
-  //     .then(res => setBook(res.data))
-  //     .catch(err => console.log(err));
-  // }, [])
+  // Load all books from database
+  useEffect(() => {
+    API.getBooks()
+    .then(res => 
+        setBooks(res.data)
+      )
+      .catch(err => console.log(err));
+  }, [])
+
+  // Deletes a book from the database with a given id, then reloads books from the db
+  function handleDeleteSubmit(id) {
+    API.deleteBook(id)
+    // Filter to return true - if the current book id doesn't include the id that we're deleting, we're going to keep it)
+    setBooks(books.filter((book) => {
+        return book._id != id;
+    }))
+  }
 
   return (
-    <Container fluid>
+   <div className="mainBody">
     
       <div className="hero">
         <Jumbotron>
@@ -32,6 +43,7 @@ function Saved(props) {
         </Jumbotron>
       </div>
 
+<Container fluid>
       <Row>
       <Col size="md-12">
         <Card>
@@ -42,7 +54,7 @@ function Saved(props) {
               <ListItem key={book.id}>
                   <Card>
                   <DeleteBtn
-                      // handleDeleteSubmit={handleDeleteSubmit}
+                      handleDeleteSubmit={handleDeleteSubmit}
                       id={book._id}
                     />
                     <ViewBtn
@@ -66,6 +78,7 @@ function Saved(props) {
       </Col>
     </Row>
   </Container>
+  </div>
     );
   }
 

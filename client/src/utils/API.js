@@ -2,32 +2,33 @@ import axios from "axios";
 
 export default {
 
-//   getBookResultsByTitle: function(title) {
-//     return new Promise((resolve, reject) => {
-//     axios
-//         .get("https://www.googleapis.com/books/v1/volumes?q=$" + title + "&key=" + process.env.API_KEY)
-//         .then(res => {
-//         const bookResults = res.data.items;
-//         const results = bookResults.map(book => {
-//             // console.log(book);
-//             const { imageLinks = null } = book.volumeInfo
+  getBookResults: function(title) {
+    return new Promise((resolve, reject) => {
+axios
+        .get("https://www.googleapis.com/books/v1/volumes?q=$" + title)
+        .then(res => {
+        const bookResults = res.data.items;
+        console.log(bookResults)
+        const results = bookResults.map(book => {
+            // console.log(book);
+            const { imageLinks = null } = book.volumeInfo
 
-//             const smallThumbnail = imageLinks ? imageLinks.smallThumbnail : null
-//             return {
-//                 id: book.id,
-//                 title: book.volumeInfo.title,
-//                 authors: book.volumeInfo.authors,
-//                 description: book.volumeInfo.description,
-//                 image: smallThumbnail,
-//                 link: book.volumeInfo.previewLink
-//             };
-//         });
-//         console.log(results);
-//         resolve(results);
-//         })
-//         .catch(err => reject(err));
-//     });
-// },
+            const smallThumbnail = imageLinks ? imageLinks.smallThumbnail : null
+            return {
+                id: book.id,
+                title: book.volumeInfo.title,
+                authors: book.volumeInfo.authors,
+                description: book.volumeInfo.description,
+                image: smallThumbnail,
+                link: book.volumeInfo.previewLink
+            };
+        });
+        console.log(results);
+        resolve(results);
+        })
+        .catch(err => reject(err));
+    });
+},
   // Gets all books
   getBooks: function() {
     return axios.get("/api/books");

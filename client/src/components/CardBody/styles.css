@@ -5,7 +5,7 @@
   }
   
   .title {
-    border-left: 8px solid #FFC107;
+    border-left: 8px solid #d87093;
     padding-left: .5em;
     margin-top: .5em;
   }
@@ -15,9 +15,16 @@
     margin: 0;
   }
   
-  .image {
-    margin-bottom: 2em;
+  .description {
+   padding-left: 30px;
   }
+
+  .card-img {
+      height: 200px;
+      width: 150px;
+   
+  }
+  
   
   @media (min-width: 400px) {
     .image-description {

@@ -15,48 +15,48 @@ import "../app.css"
 function Search() {
   // Setting our component's initial state
   const [books, setBooks] = useState([])
-  const [formObject, setFormObject] = useState({})
-
-  // Load all books and store them with setBooks
-  useEffect(() => {
-    loadBooks()
-  }, [])
+  const [searchTerm, setSearchTerm] = useState("")
 
   // Loads all books and sets them to books
   function loadBooks() {
-    API.getBooks()
-      .then(res => 
-        setBooks(res.data)
+    API.getBookResults(searchTerm)
+      .then(res => {
+        console.log(res);
+        setBooks(res)
+        }
       )
       .catch(err => console.log(err));
   };
 
-  // Deletes a book from the database with a given id, then reloads books from the db
-  function deleteBook(id) {
-    API.deleteBook(id)
-      .then(res => loadBooks())
-      .catch(err => console.log(err));
-  }
-
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
-    const { name, value } = event.target;
-    setFormObject({...formObject, [name]: value})
+    const { value } = event.target;
+    console.log(value);
+    setSearchTerm( value.replace(/\s/g, '') );
   };
 
   // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
-  function handleFormSubmit(event) {
+  function handleSearchSubmit(event) {
     event.preventDefault();
-    if (formObject.title && formObject.author) {
-      API.saveBook({
-        title: formObject.title,
-        author: formObject.author,
-        synopsis: formObject.synopsis
-      })
-        .then(res => loadBooks())
-        .catch(err => console.log(err));
+    if (searchTerm) {
+      loadBooks();
+        // .then(res => setBooks(res))
+        // .catch(err => console.log(err));
     }
+  };
+
+  function handleSaveSubmit(bookData) {
+    // console.log(bookData);
+    API.saveBook({
+      _id : bookData.id,
+      title: bookData.title,
+      authors: bookData.authors,
+      description: bookData.description,
+      image: bookData.image,
+      link: bookData.link
+    })
+      // .then(res => setSavedObject())
+      // .catch(err => console.log(err));
   };
 
     return (
@@ -82,9 +82,9 @@ function Search() {
               placeholder='ex. "Catcher In The Rye"'
             />
             <FormBtn
-              // onClick={handleSearchSubmit}
+              onClick={handleSearchSubmit}
             >
-              <i className="fas fa-search"></i>
+              <i className="fa fa-search"></i>
             </FormBtn>
           </form>
         </Col>
@@ -97,10 +97,10 @@ function Search() {
                 <ListItem key={book.id}>
                     <Card>
                     <SaveBtn
-                        // handleSaveSubmit={handleSaveSubmit}
+                        handleSaveSubmit={handleSaveSubmit}
                         bookData={book}
                       >
-                        Save <i className="fas fa-bookmark"></i>
+                        Save <i className="fa fa-bookmark"></i>
                       </SaveBtn>
                       <ViewBtn
                         link={book.link}
