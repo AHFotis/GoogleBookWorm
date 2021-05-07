@@ -9,3 +9,8 @@
     margin: 0 auto;
     padding: 50px;
 }
+
+.searchTitle {
+    background-color: rgb(153, 193, 245);
+    padding: 20px;
+}

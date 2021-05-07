@@ -90,7 +90,7 @@ function Books() {
         </Col>
         <Col size="md-12">
           <Card>
-            <h4 className="text-center">Search Results</h4>
+            <h4 className="text-center searchTitle">Search Results</h4>
             {books.length >0? (
             <List>
               {books.map(book => (

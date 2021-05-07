@@ -1,9 +1,7 @@
 .navbar-container {
-    background-color: #fff;
-    -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
-    -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
-    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.3);
+    background-color: rgb(153, 193, 245);
     margin-bottom: 50px;
+    border-bottom: 1px solid black;
 }
 
 .navbar {
