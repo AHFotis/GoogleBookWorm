@@ -10,7 +10,7 @@
     padding: 50px;
 }
 
-.searchTitle {
+.searchTitle, .savedTitle {
     background-color: rgb(153, 193, 245);
     padding: 20px;
 }
