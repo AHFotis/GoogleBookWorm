@@ -1,7 +1,7 @@
 form {
     width: 90%;
     margin: auto;
-    margin-bottom: 2em;
+    margin-bottom: 32px;
 }
 
 
@@ -22,7 +22,7 @@ form .btn {
 }
 
 form .btn i {
-    margin: 0 1em;
+    margin: 0 16px;
 }
 
 @media (min-width: 600px) {

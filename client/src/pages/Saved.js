@@ -13,23 +13,25 @@ import "../app.css"
 function Saved(props) {
   const [books, setBooks] = useState([])
 
-  // Load all books from database
-  useEffect(() => {
-    API.getBooks()
-    .then(res => 
-        setBooks(res.data)
-      )
-      .catch(err => console.log(err));
-  }, [])
+  //Leftover from activity. Needs to be redone
 
-  // Deletes a book from the database with a given id, then reloads books from the db
-  function handleDeleteSubmit(id) {
-    API.deleteBook(id)
-    // Filter to return true - if the current book id doesn't include the id that we're deleting, we're going to keep it)
-    setBooks(books.filter((book) => {
-        return book._id != id;
-    }))
-  }
+  // // Load all books from database
+  // useEffect(() => {
+  //   API.getBooks()
+  //   .then(res => 
+  //       setBooks(res.data)
+  //     )
+  //     .catch(err => console.log(err));
+  // }, [])
+
+  // // Deletes a book from the database with a given id, then reloads books from the db
+  // function handleDeleteSubmit(id) {
+  //   API.deleteBook(id)
+  //   // Filter to return true - if the current book id doesn't include the id that we're deleting, we're going to keep it)
+  //   setBooks(books.filter((book) => {
+  //       return book._id != id;
+  //   }))
+  // }
 
   return (
    <div className="mainBody">
@@ -54,7 +56,7 @@ function Saved(props) {
               <ListItem key={book.id}>
                   <Card>
                   <DeleteBtn
-                      handleDeleteSubmit={handleDeleteSubmit}
+                      // handleDeleteSubmit={handleDeleteSubmit}
                       id={book._id}
                     />
                     <ViewBtn

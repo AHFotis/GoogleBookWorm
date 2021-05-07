@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
-import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import Card from "../components/Card";
 import SaveBtn from "../components/SaveBtn";
 import ViewBtn from "../components/ViewBtn";
 import CardBody from "../components/CardBody";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, FormBtn } from "../components/Form";
 import "../app.css"
 
 function Search() {
