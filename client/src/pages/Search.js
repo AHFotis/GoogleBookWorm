@@ -56,19 +56,44 @@ function Search() {
     }
   };
 
-  function handleSaveSubmit(bookData) {
-    // console.log(bookData);
+  function handleBookSave(book) {
+    // // find the book with id
+    // const book = this.state.books.find(book => book.id === id);
+    // // find all books in this.state.books
+    // const booksArray = this.state.books;
+    // // find the index of the saved book
+    // const index = booksArray.indexOf(book);
+    // // remove saved book from the booksArray and setState
+    // if (index > -1) { booksArray.splice(index, 1);
+    //   this.setState({
+    //     books: booksArray
+    //   })
+    //  }
+
+    // call API and save the book to backend
     API.saveBook({
-      _id : bookData.id,
-      title: bookData.title,
-      authors: bookData.authors,
-      description: bookData.description,
-      image: bookData.image,
-      link: bookData.link
+          _id : book.id,
+          title: book.title,
+          authors: book.authors,
+          description: book.description,
+          image: book.image,
+          link: book.link
     })
-      // .then(res => setSavedObject())
-      // .catch(err => console.log(err));
   };
+
+  // function handleSaveSubmit(bookData) {
+  //   // console.log(bookData);
+  //   API.saveBook({
+  //     _id : bookData.id,
+  //     title: bookData.title,
+  //     authors: bookData.authors,
+  //     description: bookData.description,
+  //     image: bookData.image,
+  //     link: bookData.link
+  //   })
+  //     // .then(res => setSavedObject())
+  //     // .catch(err => console.log(err));
+  // };
 
     return (
       <div className="mainBody">
@@ -108,7 +133,7 @@ function Search() {
                 <ListItem key={book.id}>
                     <Card>
                     <SaveBtn
-                        handleSaveSubmit={handleSaveSubmit}
+                        handleBookSave={handleBookSave}
                         bookData={book}
                       >
                         Save <i className="fa fa-bookmark"></i>
