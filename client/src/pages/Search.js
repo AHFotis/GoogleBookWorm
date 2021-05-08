@@ -19,8 +19,23 @@ function Search() {
   function loadBooks() {
     API.getBookResults(searchTerm)
       .then(res => {
-        console.log(res);
-        setBooks(res)
+        const bookResults = res.data.items;
+        // console.log(bookResults)
+        const results = bookResults.map(book => {
+            // console.log(book);
+            const { imageLinks = null } = book.volumeInfo
+
+            const smallThumbnail = imageLinks ? imageLinks.smallThumbnail : null
+            return {
+                id: book.id,
+                title: book.volumeInfo.title,
+                authors: book.volumeInfo.authors,
+                description: book.volumeInfo.description,
+                image: smallThumbnail,
+                link: book.volumeInfo.previewLink
+            };
+        });
+        setBooks(results)
         }
       )
       .catch(err => console.log(err));
@@ -38,8 +53,6 @@ function Search() {
     event.preventDefault();
     if (searchTerm) {
       loadBooks();
-        // .then(res => setBooks(res))
-        // .catch(err => console.log(err));
     }
   };
 
