@@ -78,7 +78,8 @@ function Search() {
           <Jumbotron>
             <div className="jumboText">
             <h1>Google Book Worm</h1>
-            <h5>Feed your inner book worm! Search for and save books of interest.</h5>
+            <h5>Type a book title in the search engine and let our Book Worm find the perfect book for you.</h5>
+            <h5>Click save to build your reading list!</h5>
             </div>
           </Jumbotron>
         </div>
