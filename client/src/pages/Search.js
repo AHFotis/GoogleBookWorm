@@ -20,7 +20,7 @@ function Search() {
     API.getBookResults(searchTerm)
       .then(res => {
         const bookResults = res.data.items;
-        // console.log(bookResults)
+        console.log(bookResults)
         const results = bookResults.map(book => {
             // console.log(book);
             const { imageLinks = null } = book.volumeInfo
@@ -57,43 +57,18 @@ function Search() {
   };
 
   function handleBookSave(book) {
-    // // find the book with id
-    // const book = this.state.books.find(book => book.id === id);
-    // // find all books in this.state.books
-    // const booksArray = this.state.books;
-    // // find the index of the saved book
-    // const index = booksArray.indexOf(book);
-    // // remove saved book from the booksArray and setState
-    // if (index > -1) { booksArray.splice(index, 1);
-    //   this.setState({
-    //     books: booksArray
-    //   })
-    //  }
-
-    // call API and save the book to backend
+   
     API.saveBook({
           _id : book.id,
           title: book.title,
-          authors: book.authors,
+          author: book.authors,
           description: book.description,
-          image: book.image,
+          img: book.image,
           link: book.link
     })
   };
 
-  // function handleSaveSubmit(bookData) {
-  //   // console.log(bookData);
-  //   API.saveBook({
-  //     _id : bookData.id,
-  //     title: bookData.title,
-  //     authors: bookData.authors,
-  //     description: bookData.description,
-  //     image: bookData.image,
-  //     link: bookData.link
-  //   })
-  //     // .then(res => setSavedObject())
-  //     // .catch(err => console.log(err));
-  // };
+
 
     return (
       <div className="mainBody">

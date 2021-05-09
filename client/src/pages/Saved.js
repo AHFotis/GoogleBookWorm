@@ -15,14 +15,14 @@ function Saved(props) {
 
   //Leftover from activity. Needs to be redone
 
-  // // Load all books from database
-  // useEffect(() => {
-  //   API.getBooks()
-  //   .then(res => 
-  //       setBooks(res.data)
-  //     )
-  //     .catch(err => console.log(err));
-  // }, [])
+  // Load all books from database
+  useEffect(() => {
+    API.getBooks()
+    .then(res => 
+        setBooks(res.data)
+      )
+      .catch(err => console.log(err));
+  }, [])
 
   // // Deletes a book from the database with a given id, then reloads books from the db
   // function handleDeleteSubmit(id) {
@@ -48,9 +48,40 @@ function Saved(props) {
 <Container fluid>
       <Row>
       <Col size="md-12">
-        <Card>
+      <Card>
+            <h4 className="text-center searchTitle">My Book List</h4>
+            {books.length >0? (
+            <List>
+              {books.map(book => (
+                <ListItem key={book._id}>
+                    <Card>
+                    <DeleteBtn
+                        // handleBookSave={handleBookSave}
+                        // bookData={book}
+                      >
+                       
+                      </DeleteBtn>
+                      <ViewBtn
+                        link={book.link}
+                      />
+                      <CardBody
+                        key={book._id}
+                        title={book.title}
+                        authors={book.author}
+                        image={book.img}
+                        description={book.description}
+                      />
+                    </Card>
+                </ListItem>
+              ))}
+            </List>
+          ) : (
+            <p className="display-message text-center mt-5">No Results to Display</p>
+          )}
+          </Card>
+        {/* <Card>
           <h4 className="text-center savedTitle">Saved Books</h4>
-          {books.length >0? (
+          {books.length > 0 ? (
           <List> 
             {books.map(book => (
               <ListItem key={book.id}>
@@ -76,7 +107,7 @@ function Saved(props) {
         ) : (
           <p className="display-message text-center mt-5">Nothing Saved Yet</p>
         )}
-        </Card>
+        </Card> */}
       </Col>
     </Row>
   </Container>
