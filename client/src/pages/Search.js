@@ -60,23 +60,9 @@ function Search() {
    
     let booksArray = books
     let index = books.indexOf(book);
-    booksArray.splice(index, 1);
-    console.log(booksArray)
-    setBooks(booksArray)
+    let splice = booksArray.splice(index, 1);
+    // let newArr = booksArray;
 
-    //sample I'm working off of
-    // const book = this.state.books.find(book => book.id === id);
-    // // find all books in this.state.books
-    // const booksArray = this.state.books;
-    // // find the index of the saved book
-    // const index = booksArray.indexOf(book);
-    // // remove saved book from the booksArray and setState
-    // if (index > -1) { booksArray.splice(index, 1);
-    //   this.setState({
-    //     books: booksArray
-    //   })
-    //  }
-   
 
     API.saveBook({
           _id : book.id,
@@ -87,8 +73,26 @@ function Search() {
           link: book.link
     })
 
-
+    reRenderBook(booksArray)
+    
   };
+
+  function reRenderBook(array) {
+   
+        const results = array.map(book => {
+            return {
+                id: book.id,
+                title: book.title,
+                authors: book.authors,
+                description: book.description,
+                image: book.image,
+                link: book.link
+            };
+        });
+        setBooks(results)
+        };
+      
+  
 
 
 
