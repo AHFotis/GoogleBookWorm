@@ -13,6 +13,7 @@
 .searchTitle, .savedTitle {
     background-color: rgb(153, 193, 245);
     padding: 20px;
+    border: 1px solid black;
 }
 
 @media (max-width: 407px) {
