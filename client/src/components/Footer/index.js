@@ -5,10 +5,10 @@ import { Link } from "react-router-dom"
 function Footer() {
   return (
 
-    <footer className="navbar-container navbar">
-        <p className="logo">
+    <footer className="footer">
+        
           MERN application by AHFotis
-        </p>
+        
       </footer>
 
 //     <div className="navbar-container fixed-top">

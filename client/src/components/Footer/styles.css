@@ -1,16 +1,10 @@
-.navbar-container {
+
+
+.footer {
     background-color: rgb(153, 193, 245);
-    margin-bottom: 50px;
-    border-bottom: 1px solid black;
+    text-align: center;
+    padding: 10px;
+    
 }
 
-.navbar {
-    max-width: 960px;
-    margin: auto;
-}
-
-.logo {
-    font-weight: normal;
-    margin: 0 auto;
-}
 
