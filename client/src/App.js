@@ -4,6 +4,7 @@ import Search from "./pages/Search";
 import Saved from "./pages/Saved";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
