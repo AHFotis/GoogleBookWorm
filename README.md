@@ -5,7 +5,7 @@ A MERN application to search and save a personal reading list via Google Books.
 
 ## Description
 
-A React portfolio for Anna Hickey Fotis. Includes home, portfolio, and contact pages.
+A MERN book search and save. Users can search by title and see a list. Users can either navigate to the google entry for that book or save it to their reading list. On the saved page, users can view books they've saved or delete them from their list.
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@ A React portfolio for Anna Hickey Fotis. Includes home, portfolio, and contact p
   
 ## Reference
 
-Click [here](https://ahfotis.github.io/AnnaHickeyFotis/#/) to view the live application on GitHub Pages.
+Click [here](https://google-book-worm.herokuapp.com/) to view the live application on Heroku.
 
 Screenshots of application
   ![Home Page](src/assets/images/readme/Home.png)
@@ -28,7 +28,7 @@ Screenshots of application
   ![Contact](src/assets/images/readme/contact.png)
 
 ## Details
-  * Homepage shares basic information about Anna, along with an image, skilled technologies, and links to other pages..
+  * Search page allows user to search books by title.
   * Portfolio includes six projects to represent Anna's body of work
   * Contact page includes Anna's phone number and email, as well as links to her social media pages.
   
