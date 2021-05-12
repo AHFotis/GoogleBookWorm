@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Jumbotron from "../components/Jumbotron";
 import Card from "../components/Card";
 import SaveBtn from "../components/SaveBtn";
@@ -60,8 +60,8 @@ function Search() {
    
     let booksArray = books
     let index = books.indexOf(book);
-    let splice = booksArray.splice(index, 1);
-    // let newArr = booksArray;
+   booksArray.splice(index, 1);
+  
 
 
     API.saveBook({
