@@ -35,14 +35,14 @@ function Saved(props) {
   return (
    <div className="mainBody">
     
-      <div className="hero">
+    
         <Jumbotron>
         <div className="jumboText">
             <h1>Google Book Worm</h1>
             <h5>Enjoy your personal reading list!</h5>
             </div>
         </Jumbotron>
-      </div>
+    
 
 <Container fluid>
       <Row>

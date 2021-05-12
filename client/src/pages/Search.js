@@ -100,7 +100,7 @@ function Search() {
       <div className="mainBody">
       
       
-        <div className="hero">
+        
           <Jumbotron>
             <div className="jumboText">
             <h1>Google Book Worm</h1>
@@ -108,7 +108,7 @@ function Search() {
             <h5>Click save to build your reading list!</h5>
             </div>
           </Jumbotron>
-        </div>
+       
 
         <Container fluid>
        <Row>
