@@ -29,11 +29,16 @@ Screenshots of application
 
 ## Details
   * Search page allows user to search books by title.
-  * Portfolio includes six projects to represent Anna's body of work
-  * Contact page includes Anna's phone number and email, as well as links to her social media pages.
+    * Users view a list of returned titles.
+    * Users can view a book's entry on Google.com.
+    * Users can add a title to their saved list.
+  * Saved page allows user to view saved list of books.
+    * Users can view a book's entry on Google.com.
+    * Users can delete book from their list.
+ 
   
 ## Technologies
-Technologies used: CSS, JavaScript, React, React-DOM, React-Scripts, Bootstrap.
+Technologies used: CSS, JavaScript, React, React-DOM, React-Scripts, Bootstrap, Google Books API, Axios, Express, Mongoose
 
 ## Installation
 
