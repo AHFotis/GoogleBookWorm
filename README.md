@@ -22,10 +22,14 @@ A MERN book search and save. Users can search by title and see a list. Users can
 
 Click [here](https://google-book-worm.herokuapp.com/) to view the live application on Heroku.
 
-Screenshots of application
-  ![Home Page](src/assets/images/readme/Home.png)
-  ![Portfolio](src/assets/images/readme/portfolio.png)
-  ![Contact](src/assets/images/readme/contact.png)
+Screenshot of application
+  ![Home Page](./client/src/components/images/screenshot.png)
+
+Search Page
+  ![Search](./client/src/components/images/SearchPage.gif)
+  
+Save Page
+  ![Contact](./client/src/components/images/SavePage.gif)
 
 ## Details
   * Search page allows user to search books by title.
