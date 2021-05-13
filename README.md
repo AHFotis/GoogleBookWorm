@@ -42,7 +42,7 @@ Save Page
  
   
 ## Technologies
-Technologies used: CSS, JavaScript, React, React-DOM, React-Scripts, Bootstrap, Google Books API, Axios, Express, Mongoose
+Technologies used: CSS, JavaScript, React, React-DOM, React-Scripts, Bootstrap, Google Books API, Axios, Express, Mongoose, MongoDB
 
 ## Installation
 
