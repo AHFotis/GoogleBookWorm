@@ -20,9 +20,7 @@ function Search() {
     API.getBookResults(searchTerm)
       .then(res => {
         const bookResults = res.data.items;
-        console.log(bookResults)
         const results = bookResults.map(book => {
-            // console.log(book);
             const { imageLinks = null } = book.volumeInfo
 
             const smallThumbnail = imageLinks ? imageLinks.smallThumbnail : null
@@ -44,7 +42,6 @@ function Search() {
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { value } = event.target;
-    console.log(value);
     setSearchTerm( value.replace(/\s/g, '') );
   };
 
