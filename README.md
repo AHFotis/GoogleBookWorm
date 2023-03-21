@@ -20,7 +20,7 @@ A MERN book search and save. Users can search by title and see a list. Users can
   
 ## Reference
 
-Click [here](https://google-book-worm.herokuapp.com/) to view the live application on Heroku.
+Click [here](https://googlebookworm-production.up.railway.app/saved) to view the live application on Railway.
 
 Screenshot of application
   ![Home Page](./client/src/components/images/screenshot.png)
