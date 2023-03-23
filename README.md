@@ -69,4 +69,4 @@ Design may be changed to the contributors needs and taste.
 
 If you have any questions, please reach out.
 * GitHub: [AHFotis](https://github.com/AHFotis)
-* Email: annahickey2@gmail.com
+* Email: annahickeyfotis@gmail.com
